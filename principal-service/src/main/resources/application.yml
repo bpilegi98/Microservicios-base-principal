@@ -1,0 +1,7 @@
+server:
+  port: 8082
+
+message:
+  prefix: 'You are talking to Principal: '
+
+
