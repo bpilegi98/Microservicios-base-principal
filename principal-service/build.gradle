@@ -49,6 +49,8 @@ dependencies {
 
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
     implementation group: 'org.springframework', name: 'spring-context', version: '5.3.5'
+
+    implementation group: 'org.springframework.data', name: 'spring-boot-starter-data-redis', version: '2.4.6'
 }
 
 dependencyManagement {
