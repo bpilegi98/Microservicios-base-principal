@@ -3,14 +3,7 @@ package com.ms.principal.controller
 import com.ms.principal.service.ApiCallerService
 import com.ms.principal.service.MessageService
 import org.junit.jupiter.api.BeforeAll
-import org.springframework.beans.factory.annotation.Value
-import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.context.annotation.PropertySource
-import org.springframework.context.annotation.PropertySources
-import org.springframework.http.MediaType
-import org.springframework.test.context.ContextConfiguration
-import org.springframework.test.context.TestPropertySource
 import org.springframework.test.util.ReflectionTestUtils
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
 import spock.lang.Specification
@@ -25,7 +18,7 @@ class MessageControllerTest extends Specification {
 
     def apiCallerService = Mock(ApiCallerService)
 
-    def messageService = new MessageService(apiCallerService)
+    def messageService = new MessageService(apiCallerService, redisService)
 
     def messageController = new MessageController(messageService)
 

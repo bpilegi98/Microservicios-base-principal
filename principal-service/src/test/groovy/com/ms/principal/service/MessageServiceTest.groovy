@@ -1,14 +1,13 @@
 package com.ms.principal.service
 
-import com.ms.principal.service.ApiCallerService;
-import com.ms.principal.service.MessageService;
+
 import spock.lang.Specification;
 
 class MessageServiceTest extends Specification {
 
     def apiCallerService = Mock(ApiCallerService)
 
-    def messageService = new MessageService(apiCallerService)
+    def messageService = new MessageService(apiCallerService, redisService)
 
 
     def "getWelcomeMessageWithUsernameGet"() {
